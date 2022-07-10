@@ -10,11 +10,11 @@ final class DeviceAtClient
 {
     public function __construct(
         public string $device_id,
+        public string $site_id,
+        public string $device_type,
         public string $name,
         public string $description,
         public string $username,
-        public string $site_id,
-        public string $device_type,
         //public string $device_client_last_api_update,
     ) {
     }
@@ -23,11 +23,11 @@ final class DeviceAtClient
     {
         return new static(
             device_id: strval($device->id),
+            site_id: intval($site_id),
+            device_type: strval($device_type),
             name: strval($device->name),
             description: strval($device->description),
             username: strval($device->username),
-            site_id: intval($site_id),
-            device_type: strval($device_type),
             //device_client_last_api_update: strval(Carbon::now()),
         );
     }
