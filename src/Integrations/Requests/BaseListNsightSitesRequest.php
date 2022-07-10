@@ -31,7 +31,7 @@ class BaseListNsightSitesRequest extends SaloonRequest
     {
         return [
             'service' => 'list_sites',
-            'clientid' => $this->client_id
+            'clientid' => $this->client_id,
         ];
     }
 }

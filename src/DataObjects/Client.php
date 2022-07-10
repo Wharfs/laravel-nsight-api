@@ -3,6 +3,7 @@
 namespace Wharfs\RmmNsightClient\DataObjects;
 
 use SimpleXMLElement;
+
 //use Carbon\Carbon;
 
 class Client

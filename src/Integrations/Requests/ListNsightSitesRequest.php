@@ -24,6 +24,7 @@ class ListNsightSitesRequest extends BaseListNsightSitesRequest
         foreach ($response->xml()->items->site as $site) {
             $siteCollection->push((Site::fromSaloon($site)));
         }
+
         return $siteCollection;
     }
 }

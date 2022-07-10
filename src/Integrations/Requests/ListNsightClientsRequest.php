@@ -24,6 +24,7 @@ class ListNsightClientsRequest extends BaseListNsightClientsRequest
         foreach ($response->xml()->items->client as $client) {
             $clientCollection->push((Client::fromSaloon($client)));
         }
+
         return $clientCollection;
     }
 }
