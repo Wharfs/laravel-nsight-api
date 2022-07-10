@@ -15,6 +15,7 @@ class RmmNsightClient
         if ($response->failed()) {
             throw $response->toException();
         }
+
         return $response->dto();
     }
 
