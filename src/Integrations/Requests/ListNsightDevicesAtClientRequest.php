@@ -36,6 +36,7 @@ class ListNsightDevicesAtClientRequest extends BaseListNsightDevicesAtClientRequ
                 }
             }
         }
+
         return $deviceCollection;
     }
 }

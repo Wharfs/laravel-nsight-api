@@ -32,6 +32,7 @@ class ListNsightDevicesByTypeAtSiteRequest extends BaseListNsightDevicesByTypeAt
                 $deviceCollection->push((DeviceAtSite::fromSaloon($device)));
             }
         }
+
         return $deviceCollection;
     }
 }

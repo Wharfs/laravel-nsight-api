@@ -8,7 +8,6 @@ use Wharfs\RmmNsightClient\Integrations\Connectors\NsightConnector;
 
 class BaseListNsightDevicesByTypeAtSiteRequest extends SaloonRequest
 {
-
     protected string $site_id;
     protected string $device_type;
 
