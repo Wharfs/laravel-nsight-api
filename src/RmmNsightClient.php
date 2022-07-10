@@ -2,7 +2,7 @@
 
 namespace Wharfs\RmmNsightClient;
 
-use Wharfs\RmmNsightClient\Integrations\ListNsightClientsRequest;
+use Wharfs\RmmNsightClient\Integrations\Requests\ListNsightClientsRequest;
 
 class RmmNsightClient
 {
@@ -13,12 +13,6 @@ class RmmNsightClient
         if ($response->failed()) {
             throw $response->toException();
         }
-
-        dd($response->dto());
-
-
-        $xml = $response->xml();
-
-        return $xml;
+        return $response->dto();
     }
 }

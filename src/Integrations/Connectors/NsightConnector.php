@@ -1,6 +1,6 @@
 <?php
 
-namespace Wharfs\RmmNsightClient\Integrations;
+namespace Wharfs\RmmNsightClient\Integrations\Connectors;
 
 class NsightConnector extends BaseNsightConnector
 {

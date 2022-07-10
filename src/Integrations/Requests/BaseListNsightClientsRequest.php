@@ -1,11 +1,12 @@
 <?php
 
-namespace Wharfs\RmmNsightClient\Integrations;
+namespace Wharfs\RmmNsightClient\Integrations\Requests;
 
 use Sammyjo20\Saloon\Constants\Saloon;
 use Sammyjo20\Saloon\Http\SaloonRequest;
+use Wharfs\RmmNsightClient\Integrations\Connectors\NsightConnector;
 
-class BasicListNsightClientsRequest extends SaloonRequest
+class BaseListNsightClientsRequest extends SaloonRequest
 {
     /**
      * Define the method that the request will use.

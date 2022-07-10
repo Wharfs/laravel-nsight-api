@@ -1,21 +1,16 @@
 <?php
 
-namespace Wharfs\RmmNsightClient\Integrations;
+namespace Wharfs\RmmNsightClient\Integrations\Connectors;
 
 use Sammyjo20\Saloon\Http\SaloonConnector;
 
 class BaseNsightConnector extends SaloonConnector
 {
+
     /**
      * @var string
      */
     public const BASE_URI = 'https://www.systemmonitor.co.uk/api';
-
-    public function __construct(
-        string $apikey = null,
-    ) {
-        $this->apikey = $apikey;
-    }
 
     public function getApiKey(): string
     {
@@ -26,7 +21,7 @@ class BaseNsightConnector extends SaloonConnector
     public function defaultQuery(): array
     {
         return [
-            'apikey' => $this->getApiKey(),
+            'apikey' => $this->getApiKey()
         ];
     }
 

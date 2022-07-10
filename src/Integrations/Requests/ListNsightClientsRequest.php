@@ -1,13 +1,13 @@
 <?php
 
-namespace Wharfs\RmmNsightClient\Integrations;
+namespace Wharfs\RmmNsightClient\Integrations\Requests;
 
 use Illuminate\Support\Collection;
 use Sammyjo20\Saloon\Http\SaloonResponse;
 use Sammyjo20\Saloon\Traits\Plugins\CastsToDto;
 use Wharfs\RmmNsightClient\DataObjects\Client;
 
-class ListNsightClientsRequest extends BasicListNsightClientsRequest
+class ListNsightClientsRequest extends BaseListNsightClientsRequest
 {
     use CastsToDto;
 
