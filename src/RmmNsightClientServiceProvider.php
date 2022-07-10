@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Wharfs\RmmNsightClient;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use Wharfs\RmmNsightClient\Commands\RmmNsightClientCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class RmmNsightClientServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('laravel-nsight-api')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            //->hasViews()
+            //->hasMigration('create_laravel-nsight-api_table')
+            ->hasCommand(RmmNsightClientCommand::class);
     }
 }
