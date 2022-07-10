@@ -6,7 +6,7 @@ use Sammyjo20\Saloon\Constants\Saloon;
 use Sammyjo20\Saloon\Http\SaloonRequest;
 use Wharfs\RmmNsightClient\Integrations\Connectors\NsightConnector;
 
-class BaseListNsightClientsRequest extends SaloonRequest
+class BaseListNsightSitesRequest extends SaloonRequest
 {
     /**
      * Define the method that the request will use.
@@ -22,15 +22,16 @@ class BaseListNsightClientsRequest extends SaloonRequest
      */
     protected ?string $connector = NsightConnector::class;
 
-    // public function __construct($params = 'other_params')
-    // {
-    //     $this->params = $params;
-    // }
+    public function __construct($client_id = null)
+    {
+        $this->client_id = $client_id;
+    }
 
     public function defaultQuery(): array
     {
         return [
-            'service' => 'list_clients',
+            'service' => 'list_sites',
+            'clientid' => $this->client_id
         ];
     }
 }

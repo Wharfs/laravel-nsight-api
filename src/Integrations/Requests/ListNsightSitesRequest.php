@@ -5,14 +5,14 @@ namespace Wharfs\RmmNsightClient\Integrations\Requests;
 use Illuminate\Support\Collection;
 use Sammyjo20\Saloon\Http\SaloonResponse;
 use Sammyjo20\Saloon\Traits\Plugins\CastsToDto;
-use Wharfs\RmmNsightClient\DataObjects\Client;
+use Wharfs\RmmNsightClient\DataObjects\Site;
 
-class ListNsightClientsRequest extends BaseListNsightClientsRequest
+class ListNsightSitesRequest extends BaseListNsightSitesRequest
 {
     use CastsToDto;
 
     /**
-     * Convert the xml response to collection of Client objects.
+     * Convert the xml response to collection of Site objects.
      *
      * @param SaloonResponse $response
      *
@@ -20,10 +20,10 @@ class ListNsightClientsRequest extends BaseListNsightClientsRequest
      */
     protected function castToDto(SaloonResponse $response): Collection
     {
-        $clientCollection = new Collection();
-        foreach ($response->xml()->items->client as $client) {
-            $clientCollection->push((Client::fromSaloon($client)));
+        $siteCollection = new Collection();
+        foreach ($response->xml()->items->site as $site) {
+            $siteCollection->push((Site::fromSaloon($site)));
         }
-        return $clientCollection;
+        return $siteCollection;
     }
 }
