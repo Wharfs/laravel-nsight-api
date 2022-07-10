@@ -23,13 +23,13 @@ class ListNsightDevicesByTypeAtSiteRequest extends BaseListNsightDevicesByTypeAt
         $deviceCollection = new Collection();
         foreach ($response->xml()->items as $items) {
             foreach ($items->server as $device) {
-                $deviceCollection->push((DeviceAtSite::fromSaloon($device)));
+                $deviceCollection->push((DeviceAtSite::fromSaloon($device, 'server')));
             }
             foreach ($items->workstation as $device) {
-                $deviceCollection->push((DeviceAtSite::fromSaloon($device)));
+                $deviceCollection->push((DeviceAtSite::fromSaloon($device, 'workstation')));
             }
             foreach ($items->mobile as $device) {
-                $deviceCollection->push((DeviceAtSite::fromSaloon($device)));
+                $deviceCollection->push((DeviceAtSite::fromSaloon($device, 'mobile')));
             }
         }
 

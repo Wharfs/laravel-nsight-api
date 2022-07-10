@@ -10,6 +10,8 @@ final class DeviceAtSite
 {
     public function __construct(
         public string $device_id,
+        //public string $site_id,
+        public string $device_type,
         public string $name,
         public string $description,
         //public string $device_site_last_api_update,
@@ -53,10 +55,12 @@ final class DeviceAtSite
     ) {
     }
 
-    public static function fromSaloon(SimpleXMLElement $device): static
+    public static function fromSaloon(SimpleXMLElement $device, string $device_type): static
     {
         return new static(
             device_id: strval($device->serverid),
+            //site_id: intval($site_id),
+            device_type: strval($device_type),
             name: strval($device->name),
             description: strval($device->description),
             //device_site_last_api_update: strval(Carbon::now()),
@@ -105,6 +109,8 @@ final class DeviceAtSite
     {
         return [
             'device_id' => $this->device_id,
+            //'site_id' => $this->device_id,
+            'device_type' => $this->device_type,
             'name' => $this->name,
             'description' => $this->description,
             //'device_client_last_api_update' => Carbon::now(),

@@ -25,13 +25,13 @@ class ListNsightDevicesAtClientRequest extends BaseListNsightDevicesAtClientRequ
             foreach ($items->client as $client) {
                 foreach ($client->site as $site) {
                     foreach ($site->server as $device) {
-                        $deviceCollection->push((DeviceAtClient::fromSaloon($device)));
+                        $deviceCollection->push((DeviceAtClient::fromSaloon($device, $site->id, 'server')));
                     }
                     foreach ($site->workstation as $device) {
-                        $deviceCollection->push((DeviceAtClient::fromSaloon($device)));
+                        $deviceCollection->push((DeviceAtClient::fromSaloon($device, $site->id, 'workstation')));
                     }
                     foreach ($site->mobile as $device) {
-                        $deviceCollection->push((DeviceAtClient::fromSaloon($device)));
+                        $deviceCollection->push((DeviceAtClient::fromSaloon($device, $site->id, 'mobile')));
                     }
                 }
             }
