@@ -9,8 +9,6 @@ use Wharfs\RmmNsightClient\DataObjects\Client;
 
 class ListNsightClientsRequest extends BasicListNsightClientsRequest
 {
-
-
     use CastsToDto;
 
     /**
@@ -26,6 +24,7 @@ class ListNsightClientsRequest extends BasicListNsightClientsRequest
         foreach ($response->xml()->items->client as $client) {
             $clientCollection->push((Client::fromSaloon($client)));
         }
+
         return $clientCollection;
     }
 }

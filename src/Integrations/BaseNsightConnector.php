@@ -6,7 +6,6 @@ use Sammyjo20\Saloon\Http\SaloonConnector;
 
 class BaseNsightConnector extends SaloonConnector
 {
-
     /**
      * @var string
      */
@@ -27,7 +26,7 @@ class BaseNsightConnector extends SaloonConnector
     public function defaultQuery(): array
     {
         return [
-            'apikey' => $this->getApiKey()
+            'apikey' => $this->getApiKey(),
         ];
     }
 

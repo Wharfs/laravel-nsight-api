@@ -8,7 +8,6 @@ class RmmNsightClient
 {
     public function getClients()
     {
-
         $request = new ListNsightClientsRequest();
         $response = $request->send();
         if ($response->failed()) {
@@ -19,6 +18,7 @@ class RmmNsightClient
 
 
         $xml = $response->xml();
+
         return $xml;
     }
 }
