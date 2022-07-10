@@ -16,7 +16,6 @@ class BaseNsightConnector extends SaloonConnector
      */
     protected string $apikey;
 
-
     public function __construct(String $apikey)
     {
         $this->apikey = $apikey;
