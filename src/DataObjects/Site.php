@@ -6,7 +6,7 @@ use SimpleXMLElement;
 
 //use Carbon\Carbon;
 
-class Site
+final class Site
 {
     public function __construct(
         public string $site_id,
@@ -35,7 +35,7 @@ class Site
     public function toArray(): array
     {
         return [
-            'site_id' => $this->siteid,
+            'site_id' => $this->site_id,
             'name' => $this->name,
             'connection_ok' => $this->connection_ok,
             'creation_date' => $this->creation_date,

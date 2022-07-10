@@ -11,6 +11,17 @@ class BaseNsightConnector extends SaloonConnector
      */
     public const BASE_URI = 'https://www.systemmonitor.co.uk/api';
 
+    /**
+     * @var string
+     */
+    protected string $apikey;
+
+
+    public function __construct(String $apikey)
+    {
+        $this->apikey = $apikey;
+    }
+
     public function getApiKey(): string
     {
         return $this->apikey;

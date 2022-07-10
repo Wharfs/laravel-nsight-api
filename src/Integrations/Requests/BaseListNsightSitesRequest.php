@@ -8,6 +8,10 @@ use Wharfs\RmmNsightClient\Integrations\Connectors\NsightConnector;
 
 class BaseListNsightSitesRequest extends SaloonRequest
 {
+
+
+    protected string $client_id;
+
     /**
      * Define the method that the request will use.
      *
